@@ -14,10 +14,9 @@ This tool is part of the [go-github-release workflow](https://github.com/mh-cbon
 See [the demo](demo/).
 
 # TOC
+
 - [Install](#install)
-  - [Glide](#glide)
-  - [linux rpm/deb repository](#linux-rpmdeb-repository)
-  - [linux rpm/deb standalone package](#linux-rpmdeb-standalone-package)
+  - [Go](#go)
 - [Requirements](#requirements)
 - [Usage](#usage)
   - [Workflow overview](#workflow-overview)
@@ -38,34 +37,11 @@ See [the demo](demo/).
 
 Check the [release page](https://github.com/mh-cbon/go-bin-deb/releases)!
 
-#### Glide
-```sh
-mkdir -p $GOPATH/src/github.com/mh-cbon/go-bin-deb
-cd $GOPATH/src/github.com/mh-cbon/go-bin-deb
-git clone https://github.com/mh-cbon/go-bin-deb.git .
-glide install
-go install
-```
+#### Go
 
-#### linux rpm/deb repository
 ```sh
-wget -O - https://raw.githubusercontent.com/mh-cbon/latest/master/bintray.sh \
-| GH=mh-cbon/go-bin-deb sh -xe
-# or
-curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/bintray.sh \
-| GH=mh-cbon/go-bin-deb sh -xe
+go install github.com/mh-cbon/go-bin-deb@latest
 ```
-
-#### linux rpm/deb standalone package
-```sh
-curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
-| GH=mh-cbon/go-bin-deb sh -xe
-# or
-wget -q -O - --no-check-certificate \
-https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
-| GH=mh-cbon/go-bin-deb sh -xe
-```
-
 # Requirements
 
 A debian system, vagrant, travis, docker, whatever.
