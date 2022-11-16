@@ -7,3 +7,5 @@
 /demo/.vagrant
 /demo/pkg-build
 .glide/
+pkg-build
+*.deb
