@@ -17,3 +17,11 @@ deb:
 
 clean:
 	rm -rf build
+
+.PHONY: build-container
+build-container:
+	docker build . -t ghcr.io/${OWNER}/${PACKAGE_NAME}
+
+.PHONY: push-container
+push-container:
+	docker push ghcr.io/${OWNER}/${PACKAGE_NAME}:latest
